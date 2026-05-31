@@ -40,15 +40,16 @@ export default function PortfolioSection() {
           ))}
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
+        <div className="grid-3">
           {filtered.map((project, i) => (
             <div key={i} className="card-base" style={{ overflow: "hidden" }}>
-              <div style={{ position: "relative", width: "100%", height: 160, background: "var(--color-bg-elevated)" }}>
+              {/* Thumbnail */}
+              <div style={{ position: "relative", width: "100%", height: 180, background: "var(--color-bg-elevated)" }}>
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   style={{ objectFit: "cover" }}
                 />
               </div>
