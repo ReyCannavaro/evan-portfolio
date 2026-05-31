@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { knowMeData } from "@/app/lib/data";
 
 export default function KnowMeSection() {
@@ -5,6 +6,7 @@ export default function KnowMeSection() {
     <section id="knowme" className="section-padding" style={{ background: "var(--color-bg-primary)" }}>
       <div className="section-container">
         <div className="flex-two-col">
+
           <div style={{ flex: 1 }}>
             <p className="section-label" style={{ marginBottom: 16 }}>{knowMeData.tag}</p>
             <h2 style={{ fontSize: "clamp(1.6rem, 3.5vw, 2.25rem)", fontWeight: 700, lineHeight: 1.2, marginBottom: 24 }}>
@@ -26,15 +28,44 @@ export default function KnowMeSection() {
           </div>
 
           <div style={{ flexShrink: 0, width: "min(380px, 100%)", position: "relative" }}>
-            <div style={{ width: "100%", height: "clamp(280px, 40vw, 480px)", borderRadius: 16, background: "var(--color-bg-elevated)", overflow: "hidden", boxShadow: "var(--shadow-image)" }}>
-              <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, var(--color-bg-elevated) 0%, var(--color-bg-card) 100%)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--color-text-muted)", fontSize: 14, fontWeight: 600 }}>
-                FOTO KNOW ME
-              </div>
+            <div style={{
+              position: "relative",
+              width: "100%",
+              height: "clamp(280px, 40vw, 480px)",
+              borderRadius: 16,
+              overflow: "hidden",
+              boxShadow: "var(--shadow-image)",
+            }}>
+              <Image
+                src="/images/profile.JPEG"
+                alt="Al Evan Diamantoro — Profile"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+              />
             </div>
-            <div style={{ position: "absolute", bottom: 20, left: 20, background: "rgba(26,188,156,0.9)", color: "#fff", padding: "8px 14px", borderRadius: 10, fontSize: 12, fontWeight: 700, backdropFilter: "blur(4px)" }}>
+
+            <div style={{
+              position: "absolute",
+              bottom: 20,
+              left: 20,
+              background: "rgba(26,188,156,0.9)",
+              color: "#fff",
+              padding: "8px 14px",
+              borderRadius: 10,
+              fontSize: 12,
+              fontWeight: 700,
+              backdropFilter: "blur(4px)",
+              WebkitBackdropFilter: "blur(4px)",
+              lineHeight: 1.5,
+            }}>
               EVAN<br />5F
             </div>
           </div>
+
         </div>
       </div>
     </section>
