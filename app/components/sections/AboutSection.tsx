@@ -1,4 +1,4 @@
-import SectionTitle from "@/app/components/ui/SectionTitle";
+import Image from "next/image";
 import { aboutData } from "@/app/lib/data";
 
 export default function AboutSection() {
@@ -6,14 +6,38 @@ export default function AboutSection() {
     <section id="about" className="section-padding" style={{ background: "var(--color-bg-primary)" }}>
       <div className="section-container">
         <div className="flex-two-col">
-          {/* Image */}
+
           <div style={{ position: "relative", flexShrink: 0, width: "min(420px, 100%)" }}>
-            <div style={{ width: "100%", height: "clamp(280px, 40vw, 480px)", borderRadius: 16, background: "var(--color-bg-elevated)", overflow: "hidden", boxShadow: "var(--shadow-image)" }}>
-              <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg, var(--color-bg-elevated) 0%, var(--color-bg-card) 100%)", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--color-text-muted)", fontSize: 14, fontWeight: 600 }}>
-                FOTO ABOUT
-              </div>
+            <div style={{
+              position: "absolute",
+              inset: 0,
+              borderRadius: 16,
+              border: "3px solid var(--color-accent)",
+              transform: "translate(12px, 12px)",
+              zIndex: 0,
+              opacity: 0.6,
+            }} />
+
+            <div style={{
+              position: "relative",
+              zIndex: 1,
+              width: "100%",
+              height: "clamp(280px, 40vw, 480px)",
+              borderRadius: 16,
+              overflow: "hidden",
+              boxShadow: "var(--shadow-image)",
+            }}>
+              <Image
+                src="/images/about.JPG"
+                alt="Al Evan Diamantoro — About"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+              />
             </div>
-            <div style={{ position: "absolute", inset: 0, borderRadius: 16, border: "3px solid var(--color-accent)", transform: "translate(12px, 12px)", zIndex: -1, opacity: 0.6 }} />
           </div>
 
           <div style={{ flex: 1 }}>
@@ -32,6 +56,7 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>
