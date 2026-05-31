@@ -77,18 +77,6 @@ export default function HeroSection() {
 
             <div style={{
               position: "absolute",
-              width: "clamp(240px, 32vw, 360px)",
-              height: "clamp(240px, 32vw, 360px)",
-              borderRadius: "50%",
-              background: "var(--color-accent)",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 1,
-            }} />
-
-            <div style={{
-              position: "absolute",
               top: "4%",
               right: "2%",
               display: "grid",
@@ -119,70 +107,40 @@ export default function HeroSection() {
               ))}
             </div>
 
+            <div style={{ position: "absolute", width: 20, height: 20, borderRadius: "50%", background: "var(--color-accent)", opacity: 0.6, top: "50%", left: "2%", transform: "translateY(-50%)", zIndex: 0 }} />
+            <div style={{ position: "absolute", width: 16, height: 16, borderRadius: "50%", background: "var(--color-accent)", opacity: 0.5, top: "55%", right: "0%", transform: "translateY(-50%)", zIndex: 0 }} />
+            <div style={{ position: "absolute", width: 14, height: 14, borderRadius: "50%", background: "var(--color-accent)", opacity: 0.45, bottom: "14%", left: "8%", zIndex: 0 }} />
+            <div style={{ position: "absolute", width: 22, height: 22, borderRadius: "50%", background: "var(--color-accent)", opacity: 0.4, bottom: "10%", right: "14%", zIndex: 0 }} />
+
             <div style={{
               position: "absolute",
-              width: 20, height: 20,
+              width: "clamp(240px, 32vw, 360px)",
+              height: "clamp(240px, 32vw, 360px)",
               borderRadius: "50%",
               background: "var(--color-accent)",
-              opacity: 0.6,
               top: "50%",
-              left: "2%",
-              transform: "translateY(-50%)",
-              zIndex: 0,
-            }} />
-
-            <div style={{
-              position: "absolute",
-              width: 16, height: 16,
-              borderRadius: "50%",
-              background: "var(--color-accent)",
-              opacity: 0.5,
-              top: "55%",
-              right: "0%",
-              transform: "translateY(-50%)",
-              zIndex: 0,
-            }} />
-
-            <div style={{
-              position: "absolute",
-              width: 14, height: 14,
-              borderRadius: "50%",
-              background: "var(--color-accent)",
-              opacity: 0.45,
-              bottom: "14%",
-              left: "8%",
-              zIndex: 0,
-            }} />
-
-            <div style={{
-              position: "absolute",
-              width: 22, height: 22,
-              borderRadius: "50%",
-              background: "var(--color-accent)",
-              opacity: 0.4,
-              bottom: "10%",
-              right: "14%",
-              zIndex: 0,
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
             }} />
 
             <div style={{
               position: "absolute",
               zIndex: 2,
               width: "clamp(200px, 26vw, 300px)",
-              height: "clamp(290px, 40vw, 450px)",
+              height: "clamp(320px, 44vw, 500px)",
               bottom: "calc(50% - clamp(240px, 32vw, 360px) / 2)",
               left: "50%",
               transform: "translateX(-50%)",
+              WebkitMaskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+              maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
             }}>
               <Image
                 src="/images/hero-picture.png"
                 alt="Al Evan Diamantoro"
                 fill
                 sizes="(max-width: 768px) 200px, (max-width: 1024px) 240px, 300px"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                }}
+                style={{ objectFit: "cover", objectPosition: "center top" }}
                 priority
               />
             </div>
