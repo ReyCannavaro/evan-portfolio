@@ -86,7 +86,7 @@ export const aboutData = {
     {
       title: "A Journey of Continuous Learning and Growth",
       description:
-        "Dunia desain terus berkembang — AI, UX terbaru, tren visual — saya selalu belajar dan beradaptasi untuk menghasilkan karya terbaik.",
+        "Dunia desain terus berkembang, AI, UX terbaru, tren visual, saya selalu belajar dan beradaptasi untuk menghasilkan karya terbaik.",
     },
   ],
 };
@@ -154,7 +154,7 @@ export const portfolioData = {
 export const footerData = {
   brand: "Personal Portofolio\nLanding Page",
   description:
-    "Portofolio pribadi Al Evan Diamantoro — UI/UX Designer yang berdedikasi menghadirkan desain bermakna dan berdampak.",
+    "Portofolio pribadi Al Evan Diamantoro, UI/UX Designer yang berdedikasi menghadirkan desain bermakna dan berdampak.",
   quickLinks: ["Home", "About", "Services", "Portfolio", "Contact"],
   services: ["Brand Identity Design", "Marketing Materials", "Web & Digital Design", "UI/UX Design", "Consultation"],
   resources: ["Blog", "Case Studies", "Design Resources", "FAQ", "Privacy Policy"],
