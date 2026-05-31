@@ -40,11 +40,9 @@ export default function PortfolioSection() {
           ))}
         </div>
 
-        {/* Grid */}
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
           {filtered.map((project, i) => (
             <div key={i} className="card-base" style={{ overflow: "hidden" }}>
-              {/* Thumbnail */}
               <div
                 style={{
                   width: "100%",
@@ -60,7 +58,6 @@ export default function PortfolioSection() {
                 {project.title}
               </div>
 
-              {/* Content */}
               <div style={{ padding: 16 }}>
                 <p className="section-label mb-2">{project.category}</p>
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 8 }}>
