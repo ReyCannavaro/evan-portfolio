@@ -1,8 +1,3 @@
-// ============================================
-// SITE DATA — Al Evan Diamantoro Portfolio
-// Edit semua konten di sini
-// ============================================
-
 export const heroData = {
   greeting: "HELLO, MY NAME IS",
   firstName: "Al Evan",

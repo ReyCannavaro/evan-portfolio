@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Link2, X, Globe } from "lucide-react";
+import Image from "next/image";
 import { heroData } from "@/app/lib/data";
 
 export default function HeroSection() {
@@ -16,16 +17,19 @@ export default function HeroSection() {
       if (i < role.length) { setDisplayed(role.slice(0, i + 1)); i++; }
       else {
         clearInterval(interval);
-        setTimeout(() => { setTyping(false); setTimeout(() => setRoleIndex((p) => (p + 1) % heroData.roles.length), 600); }, 1800);
+        setTimeout(() => {
+          setTyping(false);
+          setTimeout(() => setRoleIndex((p) => (p + 1) % heroData.roles.length), 600);
+        }, 1800);
       }
     }, 80);
     return () => clearInterval(interval);
   }, [roleIndex]);
 
   return (
-    <section id="hero" className="section-padding" style={{ background: "var(--color-bg-primary)" }}>
+    <section id="hero" className="section-padding" style={{ background: "var(--color-bg-primary)", overflow: "hidden" }}>
       <div className="section-container">
-        <div className="flex-two-col" style={{ minHeight: "70vh", justifyContent: "space-between" }}>
+        <div className="flex-two-col" style={{ minHeight: "80vh", justifyContent: "space-between", alignItems: "center" }}>
 
           <div style={{ flex: 1, maxWidth: 560 }}>
             <p className="section-label" style={{ marginBottom: 12 }}>{heroData.greeting}</p>
@@ -37,7 +41,10 @@ export default function HeroSection() {
 
             <p style={{ fontSize: "clamp(0.9rem, 2vw, 1.125rem)", fontWeight: 500, color: "var(--color-text-secondary)", fontStyle: "italic", marginBottom: 20 }}>
               I am a{" "}
-              <span style={{ color: "var(--color-accent)", fontFamily: "'Dancing Script', cursive" }} className={typing ? "typing-cursor" : ""}>
+              <span
+                style={{ color: "var(--color-accent)", fontFamily: "'Dancing Script', cursive" }}
+                className={typing ? "typing-cursor" : ""}
+              >
                 {displayed}
               </span>
             </p>
@@ -58,32 +65,130 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div style={{ flexShrink: 0, position: "relative", display: "flex", justifyContent: "center" }}>
-            <div style={{ position: "absolute", right: -16, bottom: -16, opacity: 0.3, color: "var(--color-accent)", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 6, zIndex: 0 }}>
-              {Array.from({ length: 16 }).map((_, i) => (
-                <span key={i} style={{ width: 5, height: 5, background: "currentColor", borderRadius: "50%", display: "block" }} />
+          <div style={{
+            flexShrink: 0,
+            position: "relative",
+            width: "clamp(300px, 40vw, 460px)",
+            height: "clamp(340px, 46vw, 520px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+
+            <div style={{
+              position: "absolute",
+              width: "clamp(240px, 32vw, 360px)",
+              height: "clamp(240px, 32vw, 360px)",
+              borderRadius: "50%",
+              background: "var(--color-accent)",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 1,
+            }} />
+
+            <div style={{
+              position: "absolute",
+              top: "4%",
+              right: "2%",
+              display: "grid",
+              gridTemplateColumns: "repeat(6, 1fr)",
+              gap: 6,
+              opacity: 0.4,
+              color: "var(--color-accent)",
+              zIndex: 0,
+            }}>
+              {Array.from({ length: 30 }).map((_, i) => (
+                <span key={i} style={{ width: 4, height: 4, background: "currentColor", borderRadius: "50%", display: "block" }} />
               ))}
             </div>
 
             <div style={{
-              width: "clamp(200px, 30vw, 300px)",
-              height: "clamp(200px, 30vw, 300px)",
+              position: "absolute",
+              bottom: "4%",
+              right: "2%",
+              display: "grid",
+              gridTemplateColumns: "repeat(6, 1fr)",
+              gap: 6,
+              opacity: 0.35,
+              color: "var(--color-accent)",
+              zIndex: 0,
+            }}>
+              {Array.from({ length: 30 }).map((_, i) => (
+                <span key={i} style={{ width: 4, height: 4, background: "currentColor", borderRadius: "50%", display: "block" }} />
+              ))}
+            </div>
+
+            <div style={{
+              position: "absolute",
+              width: 20, height: 20,
               borderRadius: "50%",
               background: "var(--color-accent)",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-image)",
-              position: "relative", zIndex: 1,
+              opacity: 0.6,
+              top: "50%",
+              left: "2%",
+              transform: "translateY(-50%)",
+              zIndex: 0,
+            }} />
+
+            <div style={{
+              position: "absolute",
+              width: 16, height: 16,
+              borderRadius: "50%",
+              background: "var(--color-accent)",
+              opacity: 0.5,
+              top: "55%",
+              right: "0%",
+              transform: "translateY(-50%)",
+              zIndex: 0,
+            }} />
+
+            <div style={{
+              position: "absolute",
+              width: 14, height: 14,
+              borderRadius: "50%",
+              background: "var(--color-accent)",
+              opacity: 0.45,
+              bottom: "14%",
+              left: "8%",
+              zIndex: 0,
+            }} />
+
+            <div style={{
+              position: "absolute",
+              width: 22, height: 22,
+              borderRadius: "50%",
+              background: "var(--color-accent)",
+              opacity: 0.4,
+              bottom: "10%",
+              right: "14%",
+              zIndex: 0,
+            }} />
+
+            <div style={{
+              position: "absolute",
+              zIndex: 2,
+              width: "clamp(200px, 26vw, 300px)",
+              height: "clamp(290px, 40vw, 450px)",
+              bottom: "calc(50% - clamp(240px, 32vw, 360px) / 2)",
+              left: "50%",
+              transform: "translateX(-50%)",
             }}>
-              <div style={{
-                width: "100%", height: "100%",
-                background: "linear-gradient(135deg, var(--color-accent) 0%, var(--color-bg-elevated) 100%)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                color: "#fff", fontSize: 14, fontWeight: 600, letterSpacing: "0.1em",
-              }}>
-                FOTO DISINI
-              </div>
+              <Image
+                src="/images/hero.png"
+                alt="Al Evan Diamantoro"
+                fill
+                sizes="(max-width: 768px) 200px, (max-width: 1024px) 240px, 300px"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                }}
+                priority
+              />
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
