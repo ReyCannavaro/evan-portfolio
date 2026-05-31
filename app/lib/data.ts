@@ -114,39 +114,39 @@ export const portfolioData = {
   projects: [
     {
       category: "UI/UX",
-      image: "/images/portfolio-1.jpg",
+      image: "/images/portfolio/portfolio-1.png",
       title: "Mobile App — Ecolink",
       description: "Desain aplikasi mobile ramah lingkungan dengan UI modern dan UX yang intuitif.",
     },
     {
       category: "Web",
-      image: "/images/portfolio-2.jpg",
+      image: "/images/portfolio/portfolio-2.png",
       title: "Website Company Profile",
       description: "Website company profile modern dengan desain yang profesional dan responsif.",
     },
     {
       category: "Web",
-      image: "/images/portfolio-3.jpg",
+      image: "/images/portfolio/portfolio-3.png",
       title: "Website Pemesanan Bika Ambon",
       description: "Platform e-commerce makanan tradisional dengan tampilan yang menarik dan fungsional.",
     },
     {
       category: "Certificate",
-      image: "/images/portfolio-4.jpg",
+      image: "/images/portfolio/portfolio-4.jpg",
       title: "Pelatihan UX Fundamental",
       description: "Sertifikat penyelesaian kursus UX Design Fundamental dari platform terkemuka.",
     },
     {
       category: "Certificate",
-      image: "/images/portfolio-5.jpg",
+      image: "/images/portfolio/portfolio-5.jpg",
       title: "Certificate Business Plan",
       description: "Penghargaan atas partisipasi dalam kompetisi bisnis plan tingkat nasional.",
     },
     {
       category: "Certificate",
-      image: "/images/portfolio-6.jpg",
-      title: "Certificate Pelatihan Elevate AI",
-      description: "Sertifikat pelatihan kecerdasan buatan dan penerapannya dalam desain modern.",
+      image: "/images/portfolio/portfolio-6.jpg",
+      title: "Certificate Finalis MAGE X",
+      description: "Sertifikat sebagai finalis dalam kompetisi UI/UX MAGE X dengan tema Digital Transformation.",
     },
   ],
 };

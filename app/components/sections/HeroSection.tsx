@@ -175,7 +175,7 @@ export default function HeroSection() {
               transform: "translateX(-50%)",
             }}>
               <Image
-                src="/images/hero.png"
+                src="/images/hero-picture.png"
                 alt="Al Evan Diamantoro"
                 fill
                 sizes="(max-width: 768px) 200px, (max-width: 1024px) 240px, 300px"

@@ -37,7 +37,7 @@ export default function KnowMeSection() {
               boxShadow: "var(--shadow-image)",
             }}>
               <Image
-                src="/images/profile.JPEG"
+                src="/images/knowme.jpeg"
                 alt="Al Evan Diamantoro — Profile"
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 380px"

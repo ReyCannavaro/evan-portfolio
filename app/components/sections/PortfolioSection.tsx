@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import SectionTitle from "@/app/components/ui/SectionTitle";
 import { portfolioData } from "@/app/lib/data";
@@ -17,8 +18,7 @@ export default function PortfolioSection() {
       <div className="section-container">
         <SectionTitle title="PORTOFOLIO" subtitle="My Project" />
 
-        {/* Filter Tabs */}
-        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 32 }}>
+        <div style={{ display: "flex", gap: 8, justifyContent: "center", marginBottom: 32, flexWrap: "wrap" }}>
           {portfolioData.filters.map((f) => (
             <button
               key={f}
@@ -43,23 +43,18 @@ export default function PortfolioSection() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
           {filtered.map((project, i) => (
             <div key={i} className="card-base" style={{ overflow: "hidden" }}>
-              <div
-                style={{
-                  width: "100%",
-                  height: 160,
-                  background: "var(--color-bg-elevated)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  color: "var(--color-text-muted)",
-                  fontSize: 12,
-                }}
-              >
-                {project.title}
+              <div style={{ position: "relative", width: "100%", height: 160, background: "var(--color-bg-elevated)" }}>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
 
               <div style={{ padding: 16 }}>
-                <p className="section-label mb-2">{project.category}</p>
+                <p className="section-label" style={{ marginBottom: 6 }}>{project.category}</p>
                 <h3 style={{ fontSize: 15, fontWeight: 600, color: "var(--color-text-primary)", marginBottom: 8 }}>
                   {project.title}
                 </h3>
