@@ -44,19 +44,21 @@ export default function NavDots() {
       <nav
         style={{
           position: "fixed",
-          bottom: 0,
-          left: 0,
-          right: 0,
+          bottom: 24,
+          left: "50%",
+          transform: "translateX(-50%)",
           zIndex: 50,
           display: "flex",
           alignItems: "center",
-          justifyContent: "space-around",
-          padding: "10px 8px 14px",
-          background: "rgba(17, 36, 32, 0.85)",
+          gap: 4,
+          padding: "10px 14px",
+          borderRadius: 9999,
+          background: "rgba(21, 43, 38, 0.82)",
           backdropFilter: "blur(16px)",
           WebkitBackdropFilter: "blur(16px)",
-          borderTop: "1px solid rgba(26, 188, 156, 0.15)",
-          boxShadow: "0 -4px 24px rgba(0,0,0,0.4)",
+          border: "1px solid rgba(26, 188, 156, 0.18)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(26,188,156,0.08)",
+          whiteSpace: "nowrap",
         }}
       >
         {sections.map(({ id, icon: Icon, label }, i) => {
@@ -66,38 +68,25 @@ export default function NavDots() {
               key={id}
               onClick={() => scrollTo(id)}
               aria-label={label}
+              title={label}
               style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: 4,
-                background: "none",
+                width: 40,
+                height: 40,
+                borderRadius: "50%",
                 border: "none",
                 cursor: "pointer",
-                padding: "4px 8px",
-                borderRadius: 12,
-                transition: "all 0.25s ease",
-                color: isActive ? "var(--color-accent)" : "var(--color-text-muted)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "all 0.3s ease",
+                background: isActive ? "var(--color-accent)" : "rgba(26, 188, 156, 0.07)",
+                color: isActive ? "#fff" : "var(--color-text-muted)",
+                boxShadow: isActive ? "0 0 16px rgba(26,188,156,0.45)" : "none",
+                transform: isActive ? "scale(1.15)" : "scale(1)",
+                flexShrink: 0,
               }}
             >
-              <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  background: isActive ? "var(--color-accent-light)" : "transparent",
-                  transition: "all 0.25s ease",
-                  boxShadow: isActive ? "0 0 12px rgba(26,188,156,0.3)" : "none",
-                }}
-              >
-                <Icon size={18} strokeWidth={isActive ? 2.5 : 1.8} />
-              </div>
-              <span style={{ fontSize: 9, fontWeight: isActive ? 700 : 400, letterSpacing: "0.05em" }}>
-                {label.toUpperCase()}
-              </span>
+              <Icon size={16} strokeWidth={isActive ? 2.5 : 1.8} />
             </button>
           );
         })}
