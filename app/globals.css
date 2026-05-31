@@ -1,10 +1,6 @@
 @import "tailwindcss";
 
-/* ============================================
-   DESIGN TOKENS — Al Evan Diamantoro Portfolio
-   ============================================ */
 :root {
-  /* Colors */
   --color-bg-primary: #0D1F1C;
   --color-bg-secondary: #112420;
   --color-bg-card: #152B26;
@@ -20,21 +16,16 @@
   --color-dot-active: #1ABC9C;
   --color-dot-inactive: #3D6B63;
 
-  /* Shadows */
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
   --shadow-card-hover: 0 8px 32px rgba(26, 188, 156, 0.15);
   --shadow-button: 0 4px 16px rgba(26, 188, 156, 0.3);
   --shadow-image: 0 12px 40px rgba(0, 0, 0, 0.5);
 
-  /* Transitions */
   --transition-fast: 0.15s ease;
   --transition-base: 0.25s ease;
   --transition-slow: 0.4s ease;
 }
 
-/* ============================================
-   GLOBAL RESET & BASE
-   ============================================ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -54,9 +45,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ============================================
-   TYPOGRAPHY UTILITIES
-   ============================================ */
 .font-script {
   font-family: 'Dancing Script', cursive;
 }
@@ -81,13 +69,10 @@ body {
   color: var(--color-text-muted);
 }
 
-/* ============================================
-   SECTION WRAPPER
-   ============================================ */
 .section-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 32px 0 96px;
 }
 
 .section-padding {
@@ -95,9 +80,6 @@ body {
   padding-bottom: 80px;
 }
 
-/* ============================================
-   SECTION TITLE BLOCK (used in all sections)
-   ============================================ */
 .section-title-block {
   text-align: center;
   margin-bottom: 48px;
@@ -119,9 +101,6 @@ body {
   font-weight: 400;
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -168,9 +147,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ============================================
-   CARDS
-   ============================================ */
 .card-base {
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
@@ -184,9 +160,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* ============================================
-   SOCIAL ICON
-   ============================================ */
 .social-icon {
   width: 32px;
   height: 32px;
@@ -206,9 +179,6 @@ body {
   color: var(--color-accent);
 }
 
-/* ============================================
-   SKILL BAR
-   ============================================ */
 .skill-bar-track {
   width: 100%;
   height: 4px;
@@ -224,9 +194,6 @@ body {
   transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ============================================
-   SLIDER DOTS
-   ============================================ */
 .slider-dot {
   width: 8px;
   height: 8px;
@@ -241,9 +208,6 @@ body {
   background: var(--color-dot-active);
 }
 
-/* ============================================
-   TYPING CURSOR
-   ============================================ */
 .typing-cursor::after {
   content: '|';
   animation: blink 0.8s step-start infinite;
@@ -253,9 +217,6 @@ body {
   50% { opacity: 0; }
 }
 
-/* ============================================
-   SCROLLBAR CUSTOM
-   ============================================ */
 ::-webkit-scrollbar {
   width: 6px;
 }
